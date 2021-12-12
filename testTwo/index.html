@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="container">
+    <div>
+    <h2>футболка</h2>
+    <p>футболка</p>
+    <span>1000</span>
+          <button class="shirtMax">+</button>
+          <span class="shirt">0</span>
+          <button class="shirtMin">-</button>
+         
+         </div> 
+         <div>
+            <h2>шорты</h2>
+            <p class="DescShorts">шорты</p>
+            <span class="shortsSumm">1500</span>
+                  <button class="shortsMax">+</button>
+                  <span class="shorts">0</span>
+                  <button class="shortsMin">-</button>
+                 
+                 </div> 
+                 <div>
+                    <h2>мяч</h2>
+                    <p>мяч</p>
+                    <span class="ballSumm">1200</span>
+                          <button class="ballMax">+</button>
+                          <span class="ball">0</span>
+                          <button class="ballMin">-</button>
+                         
+                         </div> 
+                         <div>
+
+                            <a id="pay" href="">Оплатить</a>
+                         </div>
+                        </div>
+  
+      <script>
+
+       document.querySelectorAll('.shirtMax')
+  .forEach(function(el){ 
+    el.onclick = function() {
+      let cnt = document.querySelector('.shirt');
+      cnt.innerText = parseInt(cnt.innerText, 10)+1;
+    };
+  });
+  document.querySelectorAll('.shirtMin')
+  .forEach(function(el){ 
+    el.onclick = function() {
+      let cnt = document.querySelector('.shirt');
+      cnt.innerText = parseInt(cnt.innerText, 10)-1;
+    };
+  });
+
+  document.querySelectorAll('.shortsMax')
+  .forEach(function(el){ 
+    el.onclick = function() {
+      let cnt = document.querySelector('.shorts');
+      cnt.innerText = parseInt(cnt.innerText, 10)+1;
+    };
+  });
+  document.querySelectorAll('.shortsMin')
+  .forEach(function(el){ 
+    el.onclick = function() {
+      let cnt = document.querySelector('.shorts');
+      cnt.innerText = parseInt(cnt.innerText, 10)-1;
+    };
+  });
+
+  document.querySelectorAll('.ballMax')
+  .forEach(function(el){ 
+    el.onclick = function() {
+      let cnt = document.querySelector('.ball');
+      cnt.innerText = parseInt(cnt.innerText, 10)+1;
+    };
+  });
+  document.querySelectorAll('.ballMin')
+  .forEach(function(el){ 
+    el.onclick = function() {
+      let cnt = document.querySelector('.ball');
+      cnt.innerText = parseInt(cnt.innerText, 10)-1;
+    };
+  });
+  
+        document.getElementById('pay').onclick = function(){
+            let shirtSumm = document.querySelector('.shirtSumm').innerHTML;
+            let shortsSumm = document.querySelector('.shsrtsSumm').innerHTML;
+            let ballSumm = document.querySelector('.ballSumm').innerHTML;
+            
+
+
+           let shirt = document.querySelector('.shirt').innerHTML;
+           let shorts = document.querySelector('.shorts').innerHTML;
+           let ball = document.querySelector('.ball').innerHTML;
+           if (shirt < 0){return false;}else{ let amountShirt = +shirtSumm  * +shirt;}
+           if (shorts < 0){return false;}else{ let amountShorts = +shortsSumm  * +shorts;}
+           if (ball < 0){return false;}else{ let amountball = +ballSumm  * +ball;}
+
+        document.getElementById('pay').href = 'https://oplata.tinkoff.ru/landing/develop/documentation/Init?AmountShirt='+amountShirt+'&AmountShorts='+amountshorts+'&AmountBall'+amountBall;
+    }
+        
+            </script>
+</body>
+</html>
